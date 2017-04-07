@@ -89,7 +89,7 @@ android {
                 // domain tld
                 // domain name
                 // .client
-                applicationId 'com.custom.client'
+                applicationId 'ba.out.bring.n8'
             }
         }
 
