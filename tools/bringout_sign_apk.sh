@@ -6,12 +6,22 @@ VALID_DAYS=20000
 build_dir=$(pwd)
 
 
-outputs/apk/N8-android-modified-release-unsigned.apk
-
-APK_DIR=outputs/apk
+APK_DIR=build/outputs/apk
 APK=N8-android-modified-release-unsigned.apk
 
 APK_SIGNED=N8.apk
+
+
+if [ ! -f $APK_DIR/$APK ] ; then
+   echo $APK_DIR/$APK ne postoji
+   exit 1
+fi 
+
+if [ -f bringout-android.keystore ] ; then
+  cp bringout-android.keystore $APK_DIR
+fi
+
+
 
 cd $APK_DIR
 
